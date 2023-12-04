@@ -779,6 +779,8 @@ self: super: with self; {
 
   aspell-python = callPackage ../development/python-modules/aspell-python { };
 
+  asphalt = callPackage ../development/python-modules/asphalt { };
+
   aspy-refactor-imports = callPackage ../development/python-modules/aspy-refactor-imports { };
 
   aspy-yaml = callPackage ../development/python-modules/aspy.yaml { };
@@ -832,6 +834,8 @@ self: super: with self; {
   asyncinotify = callPackage ../development/python-modules/asyncinotify { };
 
   asyncio-dgram = callPackage ../development/python-modules/asyncio-dgram { };
+
+  asyncio-extras = callPackage ../development/python-modules/asyncio-extras { };
 
   asyncio-mqtt = callPackage ../development/python-modules/asyncio-mqtt { };
 
@@ -14733,6 +14737,8 @@ self: super: with self; {
   txgithub = callPackage ../development/python-modules/txgithub { };
 
   txi2p-tahoe = callPackage ../development/python-modules/txi2p-tahoe { };
+
+  txl = callPackage ../development/python-modules/txl { };
 
   txredisapi = callPackage ../development/python-modules/txredisapi { };
 
