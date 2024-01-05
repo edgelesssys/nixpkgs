@@ -5,24 +5,29 @@
 , textual
 , y-py
 , hatchling
+, tree-sitter-languages
 }:
 
 buildPythonPackage rec {
   pname = "txl";
-  version = "0.1.22";
+  version = "0.1.24";
 
   format = "pyproject";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "sha256-mkhBzCjUchQ14A/HX5WIJTLaB0OgnHYSfuFVGiFjbbQ=";
+    sha256 = "sha256-Wva2Bomt60Ew6v+J1ZmkwfYHq61XABE3IvPDp0J+fP0=";
   };
+
+  nativeBuildInputs = [
+    hatchling
+  ];
 
   propagatedBuildInputs = [
     asphalt
     textual
     y-py
-    hatchling
+
   ];
 
   pythonImportsCheck = [

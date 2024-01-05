@@ -12,6 +12,7 @@
 , syrupy
 , time-machine
 , tree-sitter
+, tree-sitter-languages
 , typing-extensions
 }:
 
@@ -39,12 +40,13 @@ buildPythonPackage rec {
     rich
     typing-extensions
   ] ++ markdown-it-py.optional-dependencies.plugins
-    ++ markdown-it-py.optional-dependencies.linkify;
+  ++ markdown-it-py.optional-dependencies.linkify
+  ++ passthru.optional-dependencies.syntax;
 
   passthru.optional-dependencies = {
     syntax = [
       tree-sitter
-      # tree-sitter-languages
+      tree-sitter-languages
     ];
   };
 
@@ -68,6 +70,17 @@ buildPythonPackage rec {
 
     # requires tree-sitter-languages which is not packaged in nixpkgs
     "test_register_language"
+    "test_setting_builtin_language_via_constructor"
+    "test_setting_builtin_language_via_attribute"
+    "test_setting_language_to_none"
+    "test_setting_unknown_language"
+    "test_register_language"
+    "test_register_language_existing_language"
+    "test_default_theme"
+    "test_setting_builtin_themes"
+    "test_setting_theme_to_none"
+    "test_setting_unknown_theme_raises_exception"
+    "test_registering_and_setting_theme"
   ];
 
   pythonImportsCheck = [

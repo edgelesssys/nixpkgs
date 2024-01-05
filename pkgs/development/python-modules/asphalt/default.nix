@@ -10,6 +10,10 @@
 , asyncio-extras
 , click
 , ruamel-yaml
+, importlib-metadata
+, async-generator
+, async-timeout
+, typing-extensions
 }:
 
 buildPythonPackage rec {
@@ -44,6 +48,10 @@ buildPythonPackage rec {
     asyncio-extras
     click
     ruamel-yaml
+    importlib-metadata
+    async-generator
+    async-timeout
+    typing-extensions
   ];
 
   meta = with lib; {

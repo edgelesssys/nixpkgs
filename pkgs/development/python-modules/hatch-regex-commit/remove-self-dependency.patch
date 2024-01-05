@@ -1,0 +1,21 @@
+diff --git a/pyproject.toml b/pyproject.toml
+index 7401026..3a9dc57 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["hatchling", "hatch-regex-commit"]
++requires = ["hatchling"]
+ build-backend = "hatchling.build"
+
+ [project]
+@@ -38,9 +38,7 @@ Source = "https://github.com/frankie567/hatch-regex-commit"
+ regex-commit = "hatch_regex_commit.hooks"
+
+ [tool.hatch.version]
+-source = "regex_commit"
+ path = "hatch_regex_commit/__about__.py"
+-commit_extra_args = ["-e"]
+
+ [tool.hatch.envs.default]
+ dependencies = [

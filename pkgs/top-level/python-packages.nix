@@ -4973,6 +4973,8 @@ self: super: with self; {
 
   hatch-nodejs-version = callPackage ../development/python-modules/hatch-nodejs-version { };
 
+  hatch-regex-commit = callPackage ../development/python-modules/hatch-regex-commit { };
+
   hatch-requirements-txt = callPackage ../development/python-modules/hatch-requirements-txt { };
 
   haversine = callPackage ../development/python-modules/haversine { };
@@ -5193,6 +5195,8 @@ self: super: with self; {
   httpx-ntlm = callPackage ../development/python-modules/httpx-ntlm { };
 
   httpx-socks = callPackage ../development/python-modules/httpx-socks { };
+
+  httpx-ws = callPackage ../development/python-modules/httpx-ws { };
 
   huawei-lte-api = callPackage ../development/python-modules/huawei-lte-api { };
 
@@ -9999,6 +10003,8 @@ self: super: with self; {
 
   pycrc = callPackage ../development/python-modules/pycrc { };
 
+  pycrdt = callPackage ../development/python-modules/pycrdt { };
+
   pycritty = callPackage ../development/python-modules/pycritty { };
 
   pycron = callPackage ../development/python-modules/pycron { };
@@ -12201,6 +12207,8 @@ self: super: with self; {
 
   reactivex = callPackage ../development/python-modules/reactivex { };
 
+  reacttrs = callPackage ../development/python-modules/reacttrs { };
+
   rebulk = callPackage ../development/python-modules/rebulk { };
 
   recipe-scrapers = callPackage ../development/python-modules/recipe-scrapers { };
@@ -13961,6 +13969,10 @@ self: super: with self; {
 
   textual-dev = callPackage ../development/python-modules/textual-dev { };
 
+  textual-imageview = callPackage ../development/python-modules/textual-imageview { };
+
+  textual-plotext = callPackage ../development/python-modules/textual-plotext { };
+
   textual-universal-directorytree = callPackage ../development/python-modules/textual-universal-directorytree { };
 
   testbook = callPackage ../development/python-modules/testbook { };
@@ -14310,6 +14322,8 @@ self: super: with self; {
   trectools = callPackage ../development/python-modules/trectools { };
 
   tree-sitter = callPackage ../development/python-modules/tree-sitter { };
+
+  tree-sitter-languages = callPackage ../development/python-modules/tree-sitter-languages { };
 
   treelib = callPackage ../development/python-modules/treelib { };
 
@@ -16104,6 +16118,10 @@ self: super: with self; {
   yowsup = callPackage ../development/python-modules/yowsup { };
 
   ypy-websocket = callPackage ../development/python-modules/ypy-websocket { };
+
+  ypywidgets = callPackage ../development/python-modules/ypywidgets { };
+
+  ypywidgets-textual = callPackage ../development/python-modules/ypywidgets-textual { };
 
   yq = callPackage ../development/python-modules/yq {
     inherit (pkgs) jq;
