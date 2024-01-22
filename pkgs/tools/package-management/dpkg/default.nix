@@ -13,6 +13,7 @@
 , autoreconfHook
 , pkg-config
 , diffutils
+, bash
 , glibc ? !stdenv.isDarwin
 }:
 
@@ -71,7 +72,7 @@ stdenv.mkDerivation rec {
        --replace '"ldconfig"' \"${glibc.bin}/bin/ldconfig\"
   '';
 
-  buildInputs = [ perl zlib bzip2 xz zstd libmd ];
+  buildInputs = [ perl zlib bzip2 xz zstd libmd bash ];
   nativeBuildInputs = [ makeWrapper perl autoreconfHook pkg-config ];
 
   postInstall =
