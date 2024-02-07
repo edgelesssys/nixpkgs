@@ -87,7 +87,7 @@ runCommand imageFileBasename
   cd $out
 
   echo "Building image with systemd-repart..."
-  outerEnv=$(env | awk '{printf("\"%s\" ",$0)} END { printf "\n" }')
+  outerEnv=$(env | awk '{printf("\"%s\" ",$0)}')
   unshare --map-root-user fakeroot env $outerEnv systemd-repart \
     --dry-run=no \
     --empty=create \
