@@ -49,11 +49,11 @@ in
               efiArch = config.nixpkgs.hostPlatform.efiArch;
 
               espContents = pkgs.runCommand "esp-contents" { } ''
-              mkdir -p $out/EFI/BOOT
-              mkdir -p $out/EFI/Linux
+                mkdir -p $out/EFI/BOOT
+                mkdir -p $out/EFI/Linux
 
-              cp ${pkgs/systemd}/lib/systemd/boot/efi/systemd-boot${efiArch}.efi $out/EFI/BOOT/BOOT${lib.toUpper efiArch}.EFI
-              cp ${config.system.build.uki}/${config.system.boot.loader.ukiFile} $out/EFI/Linux/${config.system.boot.loader.ukiFile}
+                cp ${pkgs/systemd}/lib/systemd/boot/efi/systemd-boot${efiArch}.efi $out/EFI/BOOT/BOOT${lib.toUpper efiArch}.EFI
+                cp ${config.system.build.uki}/${config.system.boot.loader.ukiFile} $out/EFI/Linux/${config.system.boot.loader.ukiFile}
               '';
             in
             {
