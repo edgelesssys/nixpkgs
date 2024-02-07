@@ -87,7 +87,7 @@ runCommand imageFileBasename
   cd $out
 
   echo "Building image with systemd-repart..."
-  SOURCE_DATE_EPOCH=0 unshare --map-root-user fakeroot systemd-repart \
+  unshare --map-root-user fakeroot env SOURCE_DATE_EPOCH=0 systemd-repart \
     --dry-run=no \
     --empty=create \
     --size=auto \
