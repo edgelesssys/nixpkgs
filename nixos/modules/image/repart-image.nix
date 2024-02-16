@@ -35,14 +35,15 @@
 , seed
 , definitionsDirectory
 , sectorSize
-, mkfsEnv ? {}
+, mkfsEnv ? { }
 , createEmpty ? true
 }:
 
 let
-  systemdArch = let
-    inherit (stdenvNoCC) hostPlatform;
-  in
+  systemdArch =
+    let
+      inherit (stdenvNoCC) hostPlatform;
+    in
     if hostPlatform.isAarch32 then "arm"
     else if hostPlatform.isAarch64 then "arm64"
     else if hostPlatform.isx86_32 then "x86"
@@ -94,11 +95,11 @@ let
     "xz" = "xz --keep --verbose --threads=$NIX_BUILD_CORES -${toString compression.level}";
   }."${compression.algorithm}";
 in
-  stdenvNoCC.mkDerivation (finalAttrs:
-  (if (version != null)
-  then { pname = name; inherit version; }
-  else { inherit name;  }
-  ) // {
+stdenvNoCC.mkDerivation (finalAttrs:
+(if (version != null)
+then { pname = name; inherit version; }
+else { inherit name; }
+) // {
   __structuredAttrs = true;
 
 
@@ -153,7 +154,7 @@ in
     runHook preBuild
 
     echo "Building image with systemd-repart..."
-    fakeroot systemd-repart \
+    SOURCE_DATE_EPOCH=0 TZ=UTC fakeroot systemd-repart \
       ''${systemdRepartFlags[@]} \
       ${imageFileBasename}.raw \
       | tee repart-output.json
@@ -170,13 +171,13 @@ in
   # separate derivation to allow users to save disk space. Disk images are
   # already very space intensive so we want to allow users to mitigate this.
   + lib.optionalString compression.enable
-  ''
-    for f in ${imageFileBasename}*; do
-      echo "Compressing $f with ${compression.algorithm}..."
-      # Keep the original file when compressing and only delete it afterwards
-      ${compressionCommand} $f && rm $f
-    done
-  '' + ''
+    ''
+      for f in ${imageFileBasename}*; do
+        echo "Compressing $f with ${compression.algorithm}..."
+        # Keep the original file when compressing and only delete it afterwards
+        ${compressionCommand} $f && rm $f
+      done
+    '' + ''
     mv -v repart-output.json ${imageFileBasename}* $out
 
     runHook postInstall
