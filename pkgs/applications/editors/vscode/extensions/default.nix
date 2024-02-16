@@ -98,6 +98,23 @@ let
         };
       };
 
+      aaron-bond.better-comments = buildVscodeMarketplaceExtension {
+        mktplcRef = {
+          name = "better-comments";
+          publisher = "aaron-bond";
+          version = "3.0.2";
+          sha256 = "850980f0f5a37f635deb4bf9100baaa83f0b204bbbb25acdb3c96e73778f8197";
+        };
+        meta = {
+          changelog = "https://marketplace.visualstudio.com/items/aaron-bond.better-comments/changelog";
+          description = "Improve your code commenting by annotating with alert, informational, TODOs, and more!";
+          downloadPage = "https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments";
+          homepage = "https://github.com/aaron-bond/better-comments";
+          license = lib.licenses.mit;
+          maintainers = [ lib.maintainers.DataHearth ];
+        };
+      };
+
       adpyke.codesnap = buildVscodeMarketplaceExtension {
         mktplcRef = {
           name = "codesnap";
@@ -757,7 +774,7 @@ let
           name = "ruff";
           publisher = "charliermarsh";
           version = "2023.60.0";
-          sha256 = "sha256-zxE4QcWt8M6djTbdIf0YNSpeF1w7vMK4/BW5ArCOYbE=";
+          sha256 = "sha256-qgwud2gzHLHID45VxDlngFMoks5O3pTHQe+Q7bdf8+I=";
         };
         meta = {
           license = lib.licenses.mit;

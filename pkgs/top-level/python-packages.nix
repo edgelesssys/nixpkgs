@@ -105,6 +105,8 @@ self: super: with self; {
 
   aesedb = callPackage ../development/python-modules/aesedb { };
 
+  aetcd = callPackage ../development/python-modules/aetcd { };
+
   afdko = callPackage ../development/python-modules/afdko { };
 
   affine = callPackage ../development/python-modules/affine { };
@@ -166,6 +168,8 @@ self: super: with self; {
   aioaseko = callPackage ../development/python-modules/aioaseko { };
 
   aioasuswrt = callPackage ../development/python-modules/aioasuswrt { };
+
+  aioautomower = callPackage ../development/python-modules/aioautomower { };
 
   aioazuredevops = callPackage ../development/python-modules/aioazuredevops { };
 
@@ -3745,6 +3749,10 @@ self: super: with self; {
 
   escapism = callPackage ../development/python-modules/escapism { };
 
+  essentials = callPackage ../development/python-modules/essentials { };
+
+  essentials-openapi = callPackage ../development/python-modules/essentials-openapi { };
+
   etcd = callPackage ../development/python-modules/etcd { };
 
   etcd3 = callPackage ../development/python-modules/etcd3 {
@@ -4121,13 +4129,9 @@ self: super: with self; {
 
   flask-assets = callPackage ../development/python-modules/flask-assets { };
 
-  flask-autoindex = callPackage ../development/python-modules/flask-autoindex { };
-
   flask-babel = callPackage ../development/python-modules/flask-babel { };
 
   flask-babelex = callPackage ../development/python-modules/flask-babelex { };
-
-  flask-basicauth = callPackage ../development/python-modules/flask-basicauth { };
 
   flask-bcrypt = callPackage ../development/python-modules/flask-bcrypt { };
 
@@ -4194,8 +4198,6 @@ self: super: with self; {
   flask-session = callPackage ../development/python-modules/flask-session { };
 
   flask-session-captcha = callPackage ../development/python-modules/flask-session-captcha { };
-
-  flask-sessionstore = callPackage ../development/python-modules/flask-sessionstore { };
 
   flask-security-too = callPackage ../development/python-modules/flask-security-too { };
 
@@ -5061,6 +5063,8 @@ self: super: with self; {
     inherit (pkgs) h3;
   };
 
+  h5io = callPackage ../development/python-modules/h5io { };
+
   h5netcdf = callPackage ../development/python-modules/h5netcdf { };
 
   h5py = callPackage ../development/python-modules/h5py { };
@@ -5175,6 +5179,8 @@ self: super: with self; {
 
   hickle = callPackage ../development/python-modules/hickle { };
 
+  highdicom = callPackage ../development/python-modules/highdicom { };
+
   hid = callPackage ../development/python-modules/hid {
     inherit (pkgs) hidapi;
   };
@@ -5230,6 +5236,8 @@ self: super: with self; {
   holoviews = callPackage ../development/python-modules/holoviews { };
 
   home-assistant-bluetooth = callPackage ../development/python-modules/home-assistant-bluetooth { };
+
+  homeassistant-bring-api = callPackage ../development/python-modules/homeassistant-bring-api { };
 
   home-assistant-chip-clusters = callPackage ../development/python-modules/home-assistant-chip-clusters { };
 
@@ -6709,6 +6717,8 @@ self: super: with self; {
 
   ltpycld2 = callPackage ../development/python-modules/ltpycld2 { };
 
+  lttng = callPackage ../development/python-modules/lttng { };
+
   luddite = callPackage ../development/python-modules/luddite { };
 
   luftdaten = callPackage ../development/python-modules/luftdaten { };
@@ -6978,6 +6988,8 @@ self: super: with self; {
   mediafire-dl = callPackage ../development/python-modules/mediafire-dl { };
 
   mediapy = callPackage ../development/python-modules/mediapy { };
+
+  medpy = callPackage ../development/python-modules/medpy { };
 
   meeko = callPackage ../development/python-modules/meeko { };
 
@@ -8183,6 +8195,8 @@ self: super: with self; {
 
   myst-parser = callPackage ../development/python-modules/myst-parser { };
 
+  myuplink = callPackage ../development/python-modules/myuplink { };
+
   n3fit = callPackage ../development/python-modules/n3fit { };
 
   nad-receiver = callPackage ../development/python-modules/nad-receiver { };
@@ -8298,6 +8312,8 @@ self: super: with self; {
   neo = callPackage ../development/python-modules/neo { };
 
   neo4j = callPackage ../development/python-modules/neo4j { };
+
+  neoteroi-mkdocs = callPackage ../development/python-modules/neoteroi-mkdocs { };
 
   nessclient = callPackage ../development/python-modules/nessclient { };
 
@@ -9325,6 +9341,8 @@ self: super: with self; {
 
   pyprecice = callPackage ../development/python-modules/pyprecice { };
 
+  pyprobables = callPackage ../development/python-modules/pyprobables { };
+
   pyproject-api = callPackage ../development/python-modules/pyproject-api { };
 
   pyproject-hooks = callPackage ../development/python-modules/pyproject-hooks { };
@@ -9377,6 +9395,8 @@ self: super: with self; {
   };
 
   pillow-heif = callPackage ../development/python-modules/pillow-heif { };
+
+  pillow-jpls = callPackage ../development/python-modules/pillow-jpls { };
 
   pillow-simd = callPackage ../development/python-modules/pillow-simd {
       inherit (pkgs) freetype libjpeg zlib libtiff libwebp tcl lcms2 tk;
@@ -9503,6 +9523,8 @@ self: super: with self; {
   pygments-style-github = callPackage ../development/python-modules/pygments-style-github { };
 
   pygnmi = callPackage ../development/python-modules/pygnmi { };
+
+  pygount = callPackage ../development/python-modules/pygount { };
 
   pygti = callPackage ../development/python-modules/pygti { };
 
@@ -9652,7 +9674,9 @@ self: super: with self; {
 
   python-mbedtls = callPackage ../development/python-modules/python-mbedtls { };
 
-  python-memcached = callPackage ../development/python-modules/python-memcached { };
+  python-memcached = callPackage ../development/python-modules/python-memcached {
+    inherit (pkgs) memcached;
+  };
 
   python-otbr-api = callPackage ../development/python-modules/python-otbr-api { };
 
@@ -10311,17 +10335,7 @@ self: super: with self; {
 
   pycxx = callPackage ../development/python-modules/pycxx { };
 
-  pycyphal = callPackage ../development/python-modules/pycyphal {
-    # Does not yet support nunavut 2+, use latest 1.X version instead
-    # https://github.com/OpenCyphal/pycyphal/issues/277
-    nunavut = self.nunavut.overridePythonAttrs (prev: rec {
-      version = "1.9.0";
-      src = prev.src.override {
-        inherit version;
-        hash = "sha256-KhgijXJ908uxM7VZdXo1WU/RGU0cfqctBCbpF2wOcy8=";
-      };
-    });
-  };
+  pycyphal = callPackage ../development/python-modules/pycyphal { };
 
   pydaikin = callPackage ../development/python-modules/pydaikin { };
 
@@ -10572,6 +10586,8 @@ self: super: with self; {
 
   pygls = callPackage ../development/python-modules/pygls { };
 
+  pygltflib = callPackage ../development/python-modules/pygltflib { };
+
   pygmars = callPackage ../development/python-modules/pygmars { };
 
   pygments-better-html = callPackage ../development/python-modules/pygments-better-html { };
@@ -10818,6 +10834,8 @@ self: super: with self; {
   pymata-express = callPackage ../development/python-modules/pymata-express { };
 
   pymatgen = callPackage ../development/python-modules/pymatgen { };
+
+  pymatreader = callPackage ../development/python-modules/pymatreader { };
 
   pymatting = callPackage ../development/python-modules/pymatting { };
 
@@ -11324,6 +11342,8 @@ self: super: with self; {
 
   pysigma-backend-splunk = callPackage ../development/python-modules/pysigma-backend-splunk { };
 
+  pysigma-backend-sqlite = callPackage ../development/python-modules/pysigma-backend-sqlite { };
+
   pysigma-backend-insightidr = callPackage ../development/python-modules/pysigma-backend-insightidr { };
 
   pysigma-pipeline-crowdstrike = callPackage ../development/python-modules/pysigma-pipeline-crowdstrike { };
@@ -11589,6 +11609,8 @@ self: super: with self; {
 
   pytest-grpc = callPackage ../development/python-modules/pytest-grpc { };
 
+  pytest-harvest = callPackage ../development/python-modules/pytest-harvest { };
+
   pytest-helpers-namespace = callPackage ../development/python-modules/pytest-helpers-namespace { };
 
   pytest-html = callPackage ../development/python-modules/pytest-html { };
@@ -11711,6 +11733,8 @@ self: super: with self; {
 
   pytest-testmon = callPackage ../development/python-modules/pytest-testmon { };
 
+  pytest-textual-snapshot = callPackage ../development/python-modules/pytest-textual-snapshot { };
+
   pytest-timeout = callPackage ../development/python-modules/pytest-timeout { };
 
   pytest-tornado = callPackage ../development/python-modules/pytest-tornado { };
@@ -11768,6 +11792,8 @@ self: super: with self; {
   python-binance = callPackage ../development/python-modules/python-binance { };
 
   python-box = callPackage ../development/python-modules/python-box { };
+
+  python-bring-api = callPackage ../development/python-modules/python-bring-api { };
 
   python-bsblan = callPackage ../development/python-modules/python-bsblan { };
 
@@ -12010,6 +12036,8 @@ self: super: with self; {
 
   python-stdnum = callPackage ../development/python-modules/python-stdnum { };
 
+  python-technove = callPackage ../development/python-modules/python-technove { };
+
   python-telegram = callPackage ../development/python-modules/python-telegram { };
 
   python-telegram-bot = callPackage ../development/python-modules/python-telegram-bot { };
@@ -12125,17 +12153,6 @@ self: super: with self; {
   pytzdata = callPackage ../development/python-modules/pytzdata { };
 
   pyu2f = callPackage ../development/python-modules/pyu2f { };
-
-  pyuavcan = callPackage
-    ../development/python-modules/pyuavcan { # this version pinpoint to anold version is necessary due to a regression
-      nunavut = self.nunavut.overridePythonAttrs (old: rec {
-        version = "0.2.3";
-        src = old.src.override {
-          inherit version;
-          hash = "sha256-pZtRUvQMpqrnW5+8umsRcNhF9NJZJZ3I9yILVglMCnU=";
-        };
-      });
-    };
 
   pyudev = callPackage ../development/python-modules/pyudev {
     inherit (pkgs) udev;
@@ -13609,6 +13626,8 @@ self: super: with self; {
 
   sparse = callPackage ../development/python-modules/sparse { };
 
+  spatial-image = callPackage ../development/python-modules/spatial-image { };
+
   spdx-tools = callPackage ../development/python-modules/spdx-tools { };
 
   speaklater = callPackage ../development/python-modules/speaklater { };
@@ -13883,9 +13902,7 @@ self: super: with self; {
 
   stanza = callPackage ../development/python-modules/stanza { };
 
-  starlette = callPackage ../development/python-modules/starlette {
-    inherit (pkgs.darwin.apple_sdk.frameworks) ApplicationServices;
-  };
+  starlette = callPackage ../development/python-modules/starlette { };
 
   starlette-wtf = callPackage ../development/python-modules/starlette-wtf { };
 
@@ -14231,7 +14248,7 @@ self: super: with self; {
   tensorflow-build = let
     compat = rec {
       protobufTF = pkgs.protobuf_21.override {
-        abseil-cpp = pkgs.abseil-cpp;
+        abseil-cpp = pkgs.abseil-cpp_202301;
       };
       grpcTF = (pkgs.grpc.overrideAttrs (
         oldAttrs: rec {
@@ -14283,6 +14300,7 @@ self: super: with self; {
     grpc = compat.grpcTF;
     grpcio = compat.grpcioTF;
     tensorboard = compat.tensorboardTF;
+    abseil-cpp = pkgs.abseil-cpp_202301;
 
     # Tensorflow 2.13 doesn't support gcc13:
     # https://github.com/tensorflow/tensorflow/issues/61289
@@ -16331,6 +16349,8 @@ self: super: with self; {
 
   xarray = callPackage ../development/python-modules/xarray { };
 
+  xarray-dataclasses = callPackage ../development/python-modules/xarray-dataclasses { };
+
   xarray-einstats = callPackage ../development/python-modules/xarray-einstats { };
 
   xattr = callPackage ../development/python-modules/xattr { };
@@ -16408,6 +16428,10 @@ self: super: with self; {
   xpath-expressions = callPackage ../development/python-modules/xpath-expressions { };
 
   xpybutil = callPackage ../development/python-modules/xpybutil { };
+
+  xrootd = callPackage ../development/python-modules/xrootd {
+    inherit (pkgs) xrootd;
+  };
 
   xsdata = callPackage ../development/python-modules/xsdata { };
 
@@ -16518,6 +16542,8 @@ self: super: with self; {
   youtube-dl-light = callPackage ../tools/misc/youtube-dl {
     ffmpegSupport = false;
   };
+
+  youtubeaio = callPackage ../development/python-modules/youtubeaio { };
 
   yoyo-migrations = callPackage ../development/python-modules/yoyo-migrations { };
 
