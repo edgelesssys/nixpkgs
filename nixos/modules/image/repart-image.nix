@@ -20,6 +20,7 @@
 , erofs-utils
 , btrfs-progs
 , xfsprogs
+, bcachefs-tools
 
   # compression tools
 , zstd
@@ -64,6 +65,7 @@ let
     "erofs" = [ erofs-utils ];
     "btrfs" = [ btrfs-progs ];
     "xfs" = [ xfsprogs ];
+    "bcachefs" = [ bcachefs-tools ];
   };
 
   fileSystemTools = builtins.concatMap (f: fileSystemToolMapping."${f}") fileSystems;
