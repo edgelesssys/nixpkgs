@@ -385,6 +385,14 @@ in
       visible = "shallow";
       description = "Definition of slice configurations.";
     };
+
+    forceRoRootMount = mkOption {
+      default = false;
+      type = types.bool;
+      description = lib.mdDoc ''
+        Force / to be mounted as read-only.
+      '';
+    };
   };
 
   config = mkIf (config.boot.initrd.enable && cfg.enable) {
@@ -440,7 +448,7 @@ in
       ++ lib.optional (config.boot.resumeDevice != "") "resume=${config.boot.resumeDevice}"
       # `systemd` mounts root in initrd as read-only unless "rw" is on the kernel command line.
       # For NixOS activation to succeed, we need to have root writable in initrd.
-      ++ lib.optional (config.boot.initrd.systemd.root == "gpt-auto") "rw";
+      ++ lib.optional (config.boot.initrd.systemd.root == "gpt-auto" && !config.boot.initrd.systemd.forceRoRootMount) "rw";
 
     boot.initrd.systemd = {
       # bashInteractive is easier to use and also required by debug-shell.service
