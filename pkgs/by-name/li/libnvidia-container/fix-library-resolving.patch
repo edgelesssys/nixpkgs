@@ -15,7 +15,7 @@ diff --git a/src/ldcache.c b/src/ldcache.c
 index 38bab055..8cd30a0f 100644
 --- a/src/ldcache.c
 +++ b/src/ldcache.c
-@@ -108,40 +108,28 @@ ldcache_close(struct ldcache *ctx)
+@@ -108,40 +108,27 @@ ldcache_close(struct ldcache *ctx)
 
  int
  ldcache_resolve(struct ldcache *ctx, uint32_t arch, const char *root, const char * const libs[],
@@ -121,7 +121,7 @@ index b7b8adfa..d42f2beb 100644
          return (rv);
  }
 
-@@ -253,7 +249,7 @@ find_binary_paths(struct error *err, struct dxcore_context* dxcore, struct nvc_d
+@@ -203,7 +199,7 @@ find_binary_paths(struct error *err, struct nvc_driver_info *info, const char *r
          char path[PATH_MAX];
          int rv = -1;
 

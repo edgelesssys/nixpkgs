@@ -27,6 +27,10 @@ let
     src = ./modprobe.patch;
     inherit modprobeVersion;
   };
+
+  major="1";
+  minor="15";
+  patch="0";
 in
 stdenv.mkDerivation rec {
   pname = "libnvidia-container";
@@ -123,6 +127,11 @@ stdenv.mkDerivation rec {
     # same reason we patch out the static library use of libtirpc so we set the
     # define in CFLAGS
     "CFLAGS=-DWITH_TIRPC"
+    "MAJOR=${major}"
+    "MINOR=${minor}"
+    "PATCH=${patch}"
+    "TAG=v${version}"
+    "VERSION_STRING=${version}"
   ];
 
   postInstall =
